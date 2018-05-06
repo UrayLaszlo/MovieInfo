@@ -11,7 +11,21 @@ function getMovies(searchText) {
     + searchText)
     .then((response) => {
       console.log(response);
-    })
+      let movies = response.data.Search;
+      let output = '';
+      s.each(movies, (index. movie) =>{
+      output += `
+        <div class="col-md-3">
+          <div class="well text-center">
+            <img src="${movie.Poster}">
+            <h5>${movies.Title}</h5>
+            <a onclick="movieSelected(''${movie.imdvID}')" class='btn btn-primary' href="#">Movie Details</a>
+          </div>
+        </div>
+      `;
+    });
+
+    
     .catch((err) => {
       console.log(err);
     });
